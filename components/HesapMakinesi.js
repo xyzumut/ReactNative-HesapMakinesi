@@ -103,7 +103,6 @@ const style = StyleSheet.create({
     footerContainer:{
         width:'100%',
         height:'72%',
-        backgroundColor:'blue'
     },
     result:{
         width:'100%',
@@ -115,7 +114,6 @@ const style = StyleSheet.create({
     },
     oldResultsContainer:{
         width:'100%',
-        backgroundColor:'pink'
     },
     oldResults:{
         width:'100%',

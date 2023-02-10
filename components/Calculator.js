@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import {ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native'
-const HesapMakinesi = () => {
+const Calculator = () => {
 
 
     const [oldResults, setOldResults] = useState([])
@@ -155,4 +155,4 @@ const style = StyleSheet.create({
 
 })
 
-export default HesapMakinesi
+export default Calculator

@@ -1,10 +1,10 @@
 import React from 'react';
 import {View} from 'react-native';
-import HesapMakinesi from './components/HesapMakinesi';
+import Calculator from './components/Calculator';
 const YourApp = () => {
   return (
     <View>
-      <HesapMakinesi/>
+      <Calculator/>
     </View>
   );
 };

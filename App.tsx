@@ -1,15 +1,14 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
+import HesapMakinesi from './components/HesapMakinesi';
 const YourApp = () => {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-        <Text>Selam</Text>
+    <View>
+      <HesapMakinesi/>
     </View>
   );
 };
+
+
+
 export default YourApp;

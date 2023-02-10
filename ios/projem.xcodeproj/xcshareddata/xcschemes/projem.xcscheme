@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "projem.app"
-               BlueprintName = "projem"
-               ReferencedContainer = "container:projem.xcodeproj">
+               BuildableName = "hesap_makinesi.app"
+               BlueprintName = "hesap_makinesi"
+               ReferencedContainer = "container:hesap_makinesi.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "projemTests.xctest"
-               BlueprintName = "projemTests"
-               ReferencedContainer = "container:projem.xcodeproj">
+               BuildableName = "hesap_makinesiTests.xctest"
+               BlueprintName = "hesap_makinesiTests"
+               ReferencedContainer = "container:hesap_makinesi.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "projem.app"
-            BlueprintName = "projem"
-            ReferencedContainer = "container:projem.xcodeproj">
+            BuildableName = "hesap_makinesi.app"
+            BlueprintName = "hesap_makinesi"
+            ReferencedContainer = "container:hesap_makinesi.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "projem.app"
-            BlueprintName = "projem"
-            ReferencedContainer = "container:projem.xcodeproj">
+            BuildableName = "hesap_makinesi.app"
+            BlueprintName = "hesap_makinesi"
+            ReferencedContainer = "container:hesap_makinesi.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

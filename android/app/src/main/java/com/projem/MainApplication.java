@@ -1,4 +1,4 @@
-package com.projem;
+package com.hesap_makinesi;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

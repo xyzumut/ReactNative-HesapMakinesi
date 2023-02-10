@@ -1,24 +1,51 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import {ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native'
 const HesapMakinesi = () => {
 
-    const veriler = ['+','-','/','X']
 
-    let eskiler = [10,20,30,40]
+    const [oldResults, setOldResults] = useState([])
+    const [selectedOperation, setSelectedOperation] = useState('+')
+    const [result, setResult] = useState(0)
+    const operationList = ['+','-','/','X']
+    const [input1, setInput1] = useState(0)
+    const [input2, setInput2] = useState(0)
+    const temp = useRef(false)
+
+
+    const handleOperation = () => {
+        selectedOperation === '+' ? setResult(input1 + input2) :
+        selectedOperation === '-' ? setResult(input1 - input2) :
+        selectedOperation === 'X' ? setResult((input1 * input2).toFixed(4)) :
+        input2 !== 0 ? setResult((input1 / input2).toFixed(4)) : alert('Bölü İşleminde payda 0 olamaz')
+    }
+
+    useEffect(() => {
+        temp.current ? 
+            setOldResults(prevResults => [Number(result), ...prevResults] ) : 
+            temp.current = true
+    },[result])
 
     return (
         <View style={style.layout}>
             <View style={style.headerContainer}>
                 <View style={style.inputContainer}>
-                    <TextInput  style={style.input} inputMode={'numeric'}/>
-                    <Text style={style.selectedOperation}>+</Text>
-                    <TextInput  style={style.input} inputMode={'numeric'}/>
+                    <TextInput defaultValue={input1.toString()} style={style.input} inputMode={'numeric'} onChangeText={(newText) => {setInput1(Number(newText))}}/>
+                    <TouchableOpacity 
+                        style={{backgroundColor:'#445256',borderRadius:10}}
+                        onPress={handleOperation}
+                    >
+                        <Text style={style.selectedOperation}>{selectedOperation}</Text>
+                    </TouchableOpacity>
+                    <TextInput defaultValue={input2.toString()} style={style.input} inputMode={'numeric'} onChangeText={(newText) => {setInput2(Number(newText))}}/>
                 </View>
                 <View style={style.operationContainer}>
                 {
-                    veriler.map( (item, key) => {
+                    operationList.map( (item, key) => {
                         return(
-                            <TouchableOpacity key={key}>
+                            <TouchableOpacity 
+                                key={key}
+                                onPress={() => setSelectedOperation(item)}
+                            >
                                 <Text style={style.operations}>{item}</Text>
                             </TouchableOpacity>
                         )
@@ -28,14 +55,14 @@ const HesapMakinesi = () => {
             </View>
             <View style={style.footerContainer}>
                 <Text style={style.result}>
-                    Sonuç : 1000
+                    Sonuç : {result}
                 </Text>
                 <Text style={[style.result,{fontSize:30}]}>
                     -- Eski Sonuçlar --
                 </Text>
-                <ScrollView style={style.oldResultsContainer}>
+                <ScrollView style={style.oldResultsContainer} keyboardDismissMode={'on-drag'}>
                     {
-                        eskiler.map( (item,key) => { 
+                        oldResults.lengths !== 0 && oldResults.map( (item,key) => { 
                             return(
                                 <Text style={style.oldResults} key={key}>{item}</Text>
                             )
@@ -84,7 +111,9 @@ const style = StyleSheet.create({
     },
     selectedOperation:{
         fontSize:40,
-        color:'white'
+        color:'white',
+        width:40,
+        textAlign:'center',
     },
     operationContainer:{
         width:300,
@@ -98,7 +127,7 @@ const style = StyleSheet.create({
     },
     operations:{
         fontSize:60,
-        color:'white'
+        color:'white',
     },
     footerContainer:{
         width:'100%',

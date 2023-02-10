@@ -1,4 +1,4 @@
-package com.projem;
+package com.hesap_makinesi;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
@@ -13,7 +13,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "projem";
+    return "hesap_makinesi";
   }
 
   /**
